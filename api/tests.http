@@ -1,0 +1,55 @@
+# Inventory routes.
+# For testing purposes, this works with the Rest Client extension
+
+GET http://127.0.0.1:8000/api/inventory/4 HTTP/1.1
+
+###
+
+PUT http://127.0.0.1:8000/api/inventory/4 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Eggs",
+    "description": "Edible chicks",
+    "price": 10000,
+    "suppliers": [3, 4]
+}
+###
+
+POST http://127.0.0.1:8000/api/inventory/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Lettuce",
+    "description": "Edible fruit",
+    "price": 400,
+    "suppliers": [3]
+}
+
+###
+
+DELETE http://127.0.0.1:8000/api/inventory/4 HTTP/1.1
+
+
+#Supplier requests
+
+###
+GET http://127.0.0.1:8000/api/supplier/3 HTTP/1.1
+
+###
+PUT http://127.0.0.1:8000/api/supplier/3 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Eggliar",
+    "contact_info": "90999434342"
+}
+
+###
+POST http://127.0.0.1:8000/api/supplier/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "adam",
+    "contact_info": "09023433212"
+}
